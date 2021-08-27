@@ -16,8 +16,9 @@ daftar menu :
     * [Hasil](#implacer-result)
  
 * [Tutorial Manipulator](#menggunakan-image-processor)
-    * Resize/Quality
-  	 * Watermark/Quality
+    * [Resize/Quality](#image-processing-compress)
+  	 * [Watermark/Quality](#image-processing-watermark)
+  	 * [Hasil](#image-processor-result)
 
 <hr>
 
@@ -105,7 +106,7 @@ $result = $imPlacer->post(
     $allowed_extention, /* array/false/bool -1 */
     $upload_limit,      /* float/false/bool -1 */
     $replace_file,      /* true/false/bool -1 */
-):array;
+);
 ```
 | Syntax  | Penjelasan |
 | ------------- | ------------- |
@@ -122,6 +123,7 @@ contoh, aku hanya akan menggunakan input name saja, jadi:
 $result = $imPlacer->post('nama_input_mu'); /* sah */
 ```
 namun jika ingin `menggunakan` | `tidak` | `menggunakan` , maka bagian yang `tidak` harus ditulis false,<br>
+dan yang tidak dipakai dibelakangnya dapat diabaikan<br>
 contoh, aku ingin menggunakan input name dan file extension, maka:
 ```php
 $result = $imPlacer->post('nama_input_mu','png'); /* TIDAK sah */
@@ -153,7 +155,7 @@ $result = $imPlacer->base64(
     $file_extention,    /* string/false/bool -1 */
     $upload_limit,      /* float/false/bool -1 */
     $replace_file,      /* true/false/bool -1 */
-):array;
+);
 ```
 
 | Syntax  | Penjelasan |
@@ -170,6 +172,7 @@ contoh, aku hanya akan menggunakan data base64 saja, jadi:
 $result = $imPlacer->base64($_POST['image_base64'); /* sah */
 ```
 namun jika ingin `menggunakan` | `tidak` | `menggunakan` , maka bagian yang `tidak` harus ditulis false,<br>
+dan yang tidak dipakai dibelakangnya dapat diabaikan<br>
 contoh, aku ingin menggunakan data base64 dan file extension, maka:
 ```php
 $result = $imPlacer->base64($_POST['image_base64','png'); /* TIDAK sah */
@@ -225,4 +228,119 @@ penggunaan Image Processor biasanya digunakan setelah melalui proses upload, jad
 
 jadi tidak ada prosess upload disini, image processor ini hanya pemanis untuk upload. <br> `kedepannya akan ditambah fitur-fitur imagick lainnya`
 
+<br>
+list cheatseet, akan dibutuhkan nanti.
 
+cheat seet $filter
+```
+POINT
+BOX
+TRIANGLE
+HERMITE
+HANNING
+HAMMING
+BLACKMAN
+GAUSSIAN
+QUADRATIC
+CUBIC
+CATROM
+MITCHELL
+BESSEL
+SINC
+LANCZOS
+```
+cheat seet $compression
+```
+JPEG
+UNDEFINED
+NO
+BZIP
+FAX
+GROUP4
+JPEG2000
+LOSSLESSJPEG
+LZW
+RLE
+ZIP
+DXT1
+DXT3
+DXT5
+ZIPS
+PIZ
+PXR24
+B44
+B44A
+LZMA
+JBIG1
+JBIG2
+ ```
+
+<br>
+
+## :keyboard: Image Processing Compress
+
+contoh kode.
+```php
+$result = \ImPro\Processor\compress(
+    $file_path,      /* path/false/bool */
+    $image_size,     /* int/false/bool -1 */
+    $quality,        /* int/false/bool -1 */
+    $filter,         /* string/false/bool -1 */
+    $compression,    /* string/false/bool -1 */
+);
+```
+
+| Syntax  | Penjelasan |
+| ------------- | ------------- |
+| `$file_path` | path ke file gambar yang ingin di prosess |
+| `$image_size` | fitur resize untuk skala max-width/max-height secara responsive |
+| `$quality` | 100 untuk kualitas tertinggi dan 1 untuk terendah |
+| `$filter` | tipe filter imagick, dapat diabaikan |
+| `$compression` | tipe kompresi imagick, dapat diabaikan |
+
+contoh jika ingin `menggunakan` | `tidak` | `menggunakan` , maka bagian yang `tidak` harus ditulis false,<br>
+dan yang tidak dipakai dibelakangnya dapat diabaikan<br>
+contoh, aku ingin menggunakan quality saja, maka:
+```php
+$result = \ImPro\Processor\compress('/path/to/image.png',100); /* sah namun akan mempengaruhi image_size dan bukan quality */
+$result = \ImPro\Processor\compress('/path/to/image.png',false,85); /* sah, mempengaruhi quality */
+```
+
+<br>
+
+## :keyboard: Image Processing Watermark
+
+contoh kode.
+```php
+$result = \ImPro\Processor\watermark(
+    $img_path,           /* path/false/bool */
+    $watermark_path,     /* path/false */
+    $img_quality,        /* int/false */
+    $filter,             /* string/false */
+);
+```
+
+| Syntax  | Penjelasan |
+| ------------- | ------------- |
+| `$img_path` | path ke file gambar yang ingin di prosess |
+| `$watermark_path` | path ke file watermark, disarankan transparency/png |
+| `$img_quality` | 100 untuk kualitas tertinggi dan 1 untuk terendah |
+| `$filter` | tipe filter imagick, dapat ditulis `false` |
+
+semua wajib diisi dan yang tidak dipakai dibelakangnya TIDAK dapat diabaikan<br>
+
+```php
+$result = \ImPro\Processor\compress('/path/to/image.png','/path/to/watermark.png',100,'LANCZOS');
+```
+
+### :keyboard: Image Processor result
+
+untuk result yang dihasilkan
+```php
+//contoh
+$result['status']['success'] // return true/false
+```
+| Result  | Penjelasan | Condition |
+| ------------- | ------------- |------------- |
+| `['status']['success']` | menghasilkan `true/false` | `param` |
+| `['reason']` | memunculkan alasan jika terjadi error atau suksess | both `['success']==true/false` |
