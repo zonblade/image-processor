@@ -7,12 +7,15 @@ daftar menu :
 * Penggunaan
     * [Manipulator](#image-manipulator-usage)
     * [Placer](#image-placement-usage)
+    
 * [Installasi](#cara-installasi)
-* Tutorial Placer
+
+* [Tutorial Placer](#menggunakan-imageplacer)
     * [post()](#implacer-post)
-    * base64()
+    * [base64()](#implacer-base64)
+    * [Hasil](#implacer-result)
  
-* Tutorial Manipulator
+* [Tutorial Manipulator](#menggunakan-image-processor)
     * Resize/Quality
   	 * Watermark/Quality
 
@@ -82,6 +85,10 @@ $imPlacer = new \ImPro\Image\placer($working_dir);
 
 ### imPlacer post
 
+| usage  | Penjelasan |
+| ------------- | ------------- |
+| fetch input | hanya untuk form input |
+
 lalu, untuk menaruh gambar dengan FORM dan method POST seperti dibawah ini
 ```html
 <form action="." method="POST">
@@ -127,3 +134,69 @@ $allowed = ['png','jpg'];
 $result = $imPlacer->post('nama_input_mu',$allowed); /* TIDAK sah */
 $result = $imPlacer->post('nama_input_mu',false,false,$allowed); /* sah */
 ```
+
+<hr>
+
+### imPlacer base64
+
+| usage  | Penjelasan |
+| ------------- | ------------- |
+| fetch any | penggunaan bebas GET/POST selama data berbentuk base64 |
+   
+dapat digunakan untuk `ajax` `axios` maupun `fetch`
+
+penjelasan kode php
+```php
+$result = $imPlacer->base64(
+    $base64_data,       /* string/wajib */
+    $filename,          /* string/false/bool -1 */
+    $file_extention,    /* string/false/bool -1 */
+    $upload_limit,      /* float/false/bool -1 */
+    $replace_file,      /* true/false/bool -1 */
+):array;
+```
+
+| Syntax  | Penjelasan |
+| ------------- | ------------- |
+| `$input_name` | nama input yang didapat dari `name="nama_input_mu"` |
+| `$filename` | nama file custom yang ingin ditulis, jika nama dari foto tersebut ingin di ganti namanya. |
+| `$file_extention` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
+| `$upload_limit` | limit ukuran file gambar tersebut, dihitung dalam `byte` |
+| `$replace_file` | mengizinkan/tidak untuk me-replace file yang sudah ada, `true` jika mengizinkan replace. |
+
+
+contoh, aku hanya akan menggunakan data base64 saja, jadi:
+```php
+$result = $imPlacer->base64($_POST['image_base64'); /* sah */
+```
+namun jika ingin `menggunakan` | `tidak` | `menggunakan` , maka bagian yang `tidak` harus ditulis false,<br>
+contoh, aku ingin menggunakan data base64 dan file extension, maka:
+```php
+$result = $imPlacer->base64($_POST['image_base64','png'); /* TIDAK sah */
+$result = $imPlacer->base64($_POST['image_base64',false,'png'); /* sah */
+```
+berlaku juga untuk `menggunakan` | `tidak` | `tidak` | `menggunakan` maka bagian yang `tidak` harus ditulis false,<br>
+contoh, aku ingin menggunakan data base64 dan upload limit, maka:
+```php
+$result = $imPlacer->base64($_POST['image_base64',$allowed); /* TIDAK sah */
+$result = $imPlacer->base64($_POST['image_base64',false,false,240000); /* sah */
+```
+
+### imPlacer result
+
+untuk result yang dihasilkan
+```php
+//contoh
+$result['status']['success'] // return true/false
+```
+| Result  | Penjelasan | Condition |
+| ------------- | ------------- |------------- |
+| `['status']['success']` | menghasilkan `true/false` | `param` |
+| `['image']['name']` | output berupa filename dan ekstensi dari foto yang sudah diupload | need `['success']==true` |
+| `['image']['path']` | output system path ke file tersebut. | need `['success']==true` |
+| `['reason']` | memunculkan alasan jika terjadi error atau sejenisnya | both `['success']==true/false` |
+
+
+<hr>
+
+## Menggunakan Image Processor
