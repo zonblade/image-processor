@@ -170,20 +170,20 @@ $result = $imPlacer->base64(
 
 contoh, aku hanya akan menggunakan data base64 saja, jadi:
 ```php
-$result = $imPlacer->base64($_POST['image_base64'); /* sah */
+$result = $imPlacer->base64($_POST['image_base64']); /* sah */
 ```
 namun jika ingin `menggunakan` | `tidak` | `menggunakan` , maka bagian yang `tidak` harus ditulis false,<br>
 dan yang tidak dipakai dibelakangnya dapat diabaikan<br>
 contoh, aku ingin menggunakan data base64 dan file extension, maka:
 ```php
-$result = $imPlacer->base64($_POST['image_base64','png'); /* TIDAK sah */
-$result = $imPlacer->base64($_POST['image_base64',false,'png'); /* sah */
+$result = $imPlacer->base64($_POST['image_base64'],'png'); /* TIDAK sah */
+$result = $imPlacer->base64($_POST['image_base64'],false,'png'); /* sah */
 ```
 berlaku juga untuk `menggunakan` | `tidak` | `tidak` | `menggunakan` maka bagian yang `tidak` harus ditulis false,<br>
 contoh, aku ingin menggunakan data base64 dan upload limit, maka:
 ```php
-$result = $imPlacer->base64($_POST['image_base64',$allowed); /* TIDAK sah */
-$result = $imPlacer->base64($_POST['image_base64',false,false,240000); /* sah */
+$result = $imPlacer->base64($_POST['image_base64'],$allowed); /* TIDAK sah */
+$result = $imPlacer->base64($_POST['image_base64'],false,false,240000); /* sah */
 ```
 
 ### imPlacer result
