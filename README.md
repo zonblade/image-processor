@@ -158,7 +158,7 @@ $result = $imPlacer->base64(
 
 | Syntax  | Penjelasan |
 | ------------- | ------------- |
-| `$input_name` | nama input yang didapat dari `name="nama_input_mu"` |
+| `$base64_data` | data image base64 dari manapun, GET/POST/SESSION |
 | `$filename` | nama file custom yang ingin ditulis, jika nama dari foto tersebut ingin di ganti namanya. |
 | `$file_extention` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
 | `$upload_limit` | limit ukuran file gambar tersebut, dihitung dalam `byte` |
