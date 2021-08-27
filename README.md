@@ -21,7 +21,7 @@ daftar menu :
 
 <hr>
 
-### image manipulator usage
+### :keyboard: image manipulator usage
 
 | Feature  | Penjelasan | Depedensi |
 | ------------- | ------------- | ------------- |
@@ -30,7 +30,7 @@ daftar menu :
 
 <hr>
 
-### image placement usage
+### :keyboard: image placement usage
 
 ```php
 $impro = new \ImPro\Image\placer($working_dir)
@@ -42,7 +42,7 @@ $impro = new \ImPro\Image\placer($working_dir)
 
 <hr>
 
-## Cara Installasi
+## :keyboard: Cara Installasi
 
 kloning git ini, atau download manual.
 ```bash
@@ -65,7 +65,7 @@ docs ini akan menggunakan cara eksplisit (cara 2)
 
 <hr>
 
-## Menggunakan ImagePlacer
+## :keyboard: Menggunakan ImagePlacer
 
 dasar-dasar yang harus diketahui
 
@@ -83,7 +83,7 @@ $imPlacer = new \ImPro\Image\placer($working_dir);
 
 <hr>
 
-### imPlacer post
+### :keyboard: imPlacer post
 
 | usage  | Penjelasan |
 | ------------- | ------------- |
@@ -137,7 +137,7 @@ $result = $imPlacer->post('nama_input_mu',false,false,$allowed); /* sah */
 
 <hr>
 
-### imPlacer base64
+### :keyboard: imPlacer base64
 
 | usage  | Penjelasan |
 | ------------- | ------------- |
@@ -182,7 +182,7 @@ $result = $imPlacer->base64($_POST['image_base64',$allowed); /* TIDAK sah */
 $result = $imPlacer->base64($_POST['image_base64',false,false,240000); /* sah */
 ```
 
-### imPlacer result
+### :keyboard: imPlacer result
 
 untuk result yang dihasilkan
 ```php
@@ -199,7 +199,7 @@ $result['status']['success'] // return true/false
 
 <hr>
 
-## Menggunakan Image Processor
+## :keyboard: Menggunakan Image Processor
 
 Image processor menggunakan [imagick](https://www.php.net/manual/en/book.imagick.php) <br>
 jadi untuk pengguna VPS harap menginstall imagicknya dulu, dan pengguna cPanel harap mengaktifkan fitur imagick.<br>
