@@ -1,8 +1,9 @@
 # ImPro (Image Processor)
 intinya sih mempermudah pengolahan gambar<br>
+follow [instagram @zonblade](https://instagram.com/zonblade) untuk mengetahui update codingan terbaruku.
 <hr>
 
-daftar menu :
+daftar isi :
 
 * Penggunaan
     * [Manipulator](#image-manipulator-usage)
