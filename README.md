@@ -6,15 +6,15 @@ daftar menu :
 
 * Penggunaan
     * [Manipulator](#image-manipulator-usage)
-    * Placer
- 
+    * [Placer](#image-placement-usage)
+* [Installasi](#cara-installasi)
 * Tutorial Placer
-    * post()
+    * [post()](#implacer-post)
     * base64()
  
 * Tutorial Manipulator
     * Resize/Quality
-  	* Watermark/Quality
+  	 * Watermark/Quality
 
 <hr>
 
@@ -27,7 +27,7 @@ daftar menu :
 
 <hr>
 
-### [image placement usage](#penggunaan_2)
+### image placement usage
 
 ```php
 $impro = new \ImPro\Image\placer($working_dir)
@@ -39,7 +39,7 @@ $impro = new \ImPro\Image\placer($working_dir)
 
 <hr>
 
-## [Cara Installasi](#installasi)
+## Cara Installasi
 
 kloning git ini, atau download manual.
 ```bash
@@ -62,7 +62,7 @@ docs ini akan menggunakan cara eksplisit (cara 2)
 
 <hr>
 
-## [Menggunakan "Image\placer"](#tutorial_palcer)
+## Menggunakan ImagePlacer
 
 dasar-dasar yang harus diketahui
 
@@ -80,7 +80,7 @@ $imPlacer = new \ImPro\Image\placer($working_dir);
 
 <hr>
 
-### [imPlacer->post() ](#tutorial_placer_post)
+### imPlacer post
 
 lalu, untuk menaruh gambar dengan FORM dan method POST seperti dibawah ini
 ```html
