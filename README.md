@@ -331,7 +331,7 @@ $result = \ImPro\Processor\watermark(
 semua wajib diisi dan yang tidak dipakai dibelakangnya TIDAK dapat diabaikan<br>
 
 ```php
-$result = \ImPro\Processor\compress('/path/to/image.png','/path/to/watermark.png',100,'LANCZOS');
+$result = \ImPro\Processor\watermark('/path/to/image.png','/path/to/watermark.png',100,'LANCZOS');
 ```
 
 ### Image Processor result
