@@ -5,7 +5,7 @@ intinya sih mempermudah pengolahan gambar<br>
 daftar menu :
 
 * Penggunaan
-    * Manipulator
+    * [Manipulator](#image-manipulator-usage)
     * Placer
  
 * Tutorial Placer
@@ -18,7 +18,7 @@ daftar menu :
 
 <hr>
 
-### [image manipulator usage](#penggunaan_1)
+### image manipulator usage
 
 | Feature  | Penjelasan | Depedensi |
 | ------------- | ------------- | ------------- |
