@@ -102,8 +102,8 @@ penjelasan kode php
 $result = $imPlacer->post(
     $input_name,        /* string/false/bool */
     $filename,          /* string/false/bool -1 */
-    $file_extention,    /* string/false/bool -1 */
-    $allowed_extention, /* array/false/bool -1 */
+    $file_extension,    /* string/false/bool -1 */
+    $allowed_extension, /* array/false/bool -1 */
     $upload_limit,      /* float/false/bool -1 */
     $replace_file,      /* true/false/bool -1 */
 );
@@ -112,8 +112,8 @@ $result = $imPlacer->post(
 | ------------- | ------------- |
 | `$input_name` | nama input yang didapat dari `name="nama_input_mu"` |
 | `$filename` | nama file custom yang ingin ditulis, jika nama dari foto tersebut ingin di ganti namanya. |
-| `$file_extention` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
-| `$allowed_extention` | jika `file_extension` bukan `false` syntax ini wajib `false`, jika ingin mengaktifkan fitur ini wajib untuk mengisi `$file_extention` menjadi `false` <br> `$allowed_extention` adalah `array()` contohnya `array('png','jpeg','jpg')`, berarti yang diperbolehkan hanya png/jpeg/jpg saja, selain itu akan return `success=false` |
+| `$file_extension` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
+| `$allowed_extension` | jika `file_extension` bukan `false` syntax ini wajib `false`, jika ingin mengaktifkan fitur ini wajib untuk mengisi `$file_extension` menjadi `false` <br> `$allowed_extension` adalah `array()` contohnya `array('png','jpeg','jpg')`, berarti yang diperbolehkan hanya png/jpeg/jpg saja, selain itu akan return `success=false` |
 | `$upload_limit` | limit ukuran file gambar tersebut, dihitung dalam `byte` |
 | `$replace_file` | mengizinkan/tidak untuk me-replace file yang sudah ada, `true` jika mengizinkan replace. |
 
@@ -152,7 +152,7 @@ penjelasan kode php
 $result = $imPlacer->base64(
     $base64_data,       /* string/wajib */
     $filename,          /* string/false/bool -1 */
-    $file_extention,    /* string/false/bool -1 */
+    $file_extension,    /* string/false/bool -1 */
     $upload_limit,      /* float/false/bool -1 */
     $replace_file,      /* true/false/bool -1 */
 );
@@ -162,7 +162,7 @@ $result = $imPlacer->base64(
 | ------------- | ------------- |
 | `$base64_data` | data image base64 dari manapun, GET/POST/SESSION |
 | `$filename` | nama file custom yang ingin ditulis, jika nama dari foto tersebut ingin di ganti namanya. |
-| `$file_extention` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
+| `$file_extension` | ekstensi file custom misal jika ingin semua file yang diupload adalah `png` maka ditulis `png` |
 | `$upload_limit` | limit ukuran file gambar tersebut, dihitung dalam `byte` |
 | `$replace_file` | mengizinkan/tidak untuk me-replace file yang sudah ada, `true` jika mengizinkan replace. |
 
