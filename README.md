@@ -22,7 +22,7 @@ daftar menu :
 
 <hr>
 
-### :keyboard: image manipulator usage
+### image manipulator usage
 
 | Feature  | Penjelasan | Depedensi |
 | ------------- | ------------- | ------------- |
@@ -31,7 +31,7 @@ daftar menu :
 
 <hr>
 
-### :keyboard: image placement usage
+### image placement usage
 
 ```php
 $impro = new \ImPro\Image\placer($working_dir)
@@ -43,7 +43,7 @@ $impro = new \ImPro\Image\placer($working_dir)
 
 <hr>
 
-## :keyboard: Cara Installasi
+## Cara Installasi
 
 kloning git ini, atau download manual.
 ```bash
@@ -66,7 +66,7 @@ docs ini akan menggunakan cara eksplisit (cara 2)
 
 <hr>
 
-## :keyboard: Menggunakan ImagePlacer
+## Menggunakan ImagePlacer
 
 dasar-dasar yang harus diketahui
 
@@ -84,7 +84,7 @@ $imPlacer = new \ImPro\Image\placer($working_dir);
 
 <hr>
 
-### :keyboard: imPlacer post
+### imPlacer post
 
 | usage  | Penjelasan |
 | ------------- | ------------- |
@@ -139,7 +139,7 @@ $result = $imPlacer->post('nama_input_mu',false,false,$allowed); /* sah */
 
 <hr>
 
-### :keyboard: imPlacer base64
+### imPlacer base64
 
 | usage  | Penjelasan |
 | ------------- | ------------- |
@@ -185,7 +185,7 @@ $result = $imPlacer->base64($_POST['image_base64',$allowed); /* TIDAK sah */
 $result = $imPlacer->base64($_POST['image_base64',false,false,240000); /* sah */
 ```
 
-### :keyboard: imPlacer result
+### imPlacer result
 
 untuk result yang dihasilkan
 ```php
@@ -202,7 +202,7 @@ $result['status']['success'] // return true/false
 
 <hr>
 
-## :keyboard: Menggunakan Image Processor
+## Menggunakan Image Processor
 
 Image processor menggunakan [imagick](https://www.php.net/manual/en/book.imagick.php) <br>
 jadi untuk pengguna VPS harap menginstall imagicknya dulu, dan pengguna cPanel harap mengaktifkan fitur imagick.<br>
@@ -277,7 +277,7 @@ JBIG2
 
 <br>
 
-## :keyboard: Image Processing Compress
+## Image Processing Compress
 
 contoh kode.
 ```php
@@ -308,7 +308,7 @@ $result = \ImPro\Processor\compress('/path/to/image.png',false,85); /* sah, memp
 
 <br>
 
-## :keyboard: Image Processing Watermark
+## Image Processing Watermark
 
 contoh kode.
 ```php
@@ -333,7 +333,7 @@ semua wajib diisi dan yang tidak dipakai dibelakangnya TIDAK dapat diabaikan<br>
 $result = \ImPro\Processor\compress('/path/to/image.png','/path/to/watermark.png',100,'LANCZOS');
 ```
 
-### :keyboard: Image Processor result
+### Image Processor result
 
 untuk result yang dihasilkan
 ```php
