@@ -200,3 +200,29 @@ $result['status']['success'] // return true/false
 <hr>
 
 ## Menggunakan Image Processor
+
+Image processor menggunakan [imagick](https://www.php.net/manual/en/book.imagick.php) <br>
+jadi untuk pengguna VPS harap menginstall imagicknya dulu, dan pengguna cPanel harap mengaktifkan fitur imagick.<br>
+[tutorial install imagick di vps (ubuntu)](https://ourcodeworld.com/articles/read/645/how-to-install-imagick-for-php-7-in-ubuntu-16-04) <br>
+[tutorial install imagick di vps (windows)](https://herbmiller.me/installing-imagick-php-7/) <br>
+[aktivasi imagick di cpanel](https://www.youtube.com/watch?v=yfxIquNhG8k&pp=ugMICgJpZBABGAE%3D)<br>
+[aktivasi imagick di whm](https://www.youtube.com/watch?v=9Wzd-aob2kA)
+<br>
+jika tidak ingin menggunakan ImageProcessor tidak apa apa untuk tidak menginstall imagick, tidak akan terjadi error.
+
+### dasar dasar
+untuk cara include/require tetap sama, hanya saja tidak memerlukan working dir. 
+
+```php
+
+require_once __DIR__.'/path/to/plugin/image-processor.php';
+
+```
+
+penggunaan Image Processor biasanya digunakan setelah melalui proses upload, jadi kira kira seperti ini
+
+`upload gambar`=>`berhasil`=>`diprosess imagick`=>`gambar hasil resize/quality`
+
+jadi tidak ada prosess upload disini, image processor ini hanya pemanis untuk upload. <br> `kedepannya akan ditambah fitur-fitur imagick lainnya`
+
+
