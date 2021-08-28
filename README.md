@@ -3,6 +3,21 @@ intinya sih mempermudah pengolahan gambar<br>
 follow [instagram @zonblade](https://instagram.com/zonblade) untuk mengetahui update codingan terbaruku.
 <hr>
 
+newest change : 
+```JSON
+{
+   "change":true,
+   "listchange":[
+      {
+         "message":"nambahin try catch",
+         "status":"harusnya sih bisa, kalau error tambahin ke issue",
+         "newrelease":"Sub Release Rev 4",
+         "update_date":"28-Aug-2021"
+      }
+   ]
+}
+```
+
 daftar isi :
 
 * Penggunaan
@@ -20,6 +35,8 @@ daftar isi :
     * [Resize/Quality](#image-processing-compress)
   	 * [Watermark/Quality](#image-processing-watermark)
   	 * [Hasil](#image-processor-result)
+  	 
+* [changelog](#changelog)
 
 <hr>
 
@@ -345,3 +362,21 @@ $result['status']['success'] // return true/false
 | ------------- | ------------- |------------- |
 | `['status']['success']` | menghasilkan `true/false` | `param` |
 | `['reason']` | memunculkan alasan jika terjadi error atau suksess | both `['success']==true/false` |
+
+
+## changelog
+
+change : 
+```JSON
+{
+   "change":true,
+   "listchange":[
+      {
+         "message":"nambahin try catch",
+         "status":"harusnya sih bisa, kalau error tambahin ke issue",
+         "newrelease":"Sub Release Rev 4",
+         "update_date":"28-Aug-2021"
+      }
+   ]
+}
+```
