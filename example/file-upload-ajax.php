@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/image.php';
+require_once __DIR__ . '/ImPro/image-processor.php';
 
 if (isset($_POST['validator'])) {
     if (isset($_POST['image'])) {
