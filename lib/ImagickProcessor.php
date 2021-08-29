@@ -1,6 +1,6 @@
 <?php
 
-namespace Processor;
+namespace ImPro\Processor;
 
 function compress()
 {
