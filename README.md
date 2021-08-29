@@ -9,10 +9,10 @@ newest change :
    "change":true,
    "listchange":[
       {
-         "message":"nambahin try catch",
-         "status":"harusnya sih bisa, kalau error tambahin ke issue",
-         "newrelease":"Sub Release Rev 4",
-         "update_date":"28-Aug-2021"
+         "message":"memperbaiki namespace, nambah example",
+         "status":"perbaikan namespace",
+         "newrelease":"Sub Release Rev 5",
+         "update_date":"29-Aug-2021"
       }
    ]
 }
@@ -371,6 +371,12 @@ change :
 {
    "change":true,
    "listchange":[
+      {
+         "message":"memperbaiki namespace, nambah example",
+         "status":"perbaikan namespace",
+         "newrelease":"Sub Release Rev 5",
+         "update_date":"29-Aug-2021"
+      },
       {
          "message":"nambahin try catch",
          "status":"harusnya sih bisa, kalau error tambahin ke issue",
