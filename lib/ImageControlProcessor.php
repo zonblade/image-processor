@@ -1,6 +1,6 @@
 <?php
 
-namespace Image;
+namespace ImPro\Image;
 
 class placer
 {
