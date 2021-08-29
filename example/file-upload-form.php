@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/lib/image-processor.php';
+require_once __DIR__.'/ImPro/image-processor.php';
 
 if(isset($_POST['upload_gambar'])){
     $image = new \ImPro\Image\placer(__DIR__.'/storage/');
